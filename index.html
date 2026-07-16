@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9ad5,#ffd6f5,#c8b6ff,#b8f2e6);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+.container{
+width:90%;
+max-width:700px;
+background:rgba(255,255,255,.25);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+h1{
+color:#fff;
+margin-bottom:20px;
+}
+
+button{
+padding:15px 35px;
+margin:10px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#ff1493;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff1493;
+color:white;
+}
+
+img{
+width:260px;
+border-radius:20px;
+margin:20px;
+box-shadow:0 0 20px pink;
+}
+
+#message{
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+color:white;
+display:none;
+}
+
+#photo{
+display:none;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ A Little Surprise ❤️</h1>
+
+<div id="home">
+
+<h2 style="color:white;">Who are you?</h2><br>
+
+<button onclick="showLaasya()">Laasya</button>
+
+<button onclick="showThanmayi()">Thanmayi</button>
+
+</div>
+
+<div id="open" style="display:none;">
+
+<h2 style="color:white;">Ready?</h2><br>
+
+<button onclick="openMessage()">Open My Surprise 🎁</button>
+
+</div>
+
+<div id="photo">
+<img id="friendPhoto" src="">
+</div>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+let selected="";
+
+function showLaasya(){
+
+selected="laasya";
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("open").style.display="block";
+
+}
+
+function showThanmayi(){
+
+selected="thanmayi";
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("open").style.display="block";
+
+}
+
+function openMessage(){
+
+document.getElementById("open").style.display="none";
+
+document.getElementById("photo").style.display="block";
+
+document.getElementById("message").style.display="block";
+
+if(selected=="laasya"){
+
+document.getElementById("friendPhoto").src="laasya.jpg";
+
+document.getElementById("message").innerHTML=`
+
+<h2>Dear Laasya ❤️</h2>
+
+<p>
+
+You are the person I met by accident, but you became one of my favorite people in my life.<br><br>
+
+Not just by your words, but by your actions, you have shown me how kind and sweet you are.
+
+I really admire the way you think and the way you understand people.
+
+You always try to make others feel happy, and that is something very special about you.<br><br>
+
+Thank you for always being there, for listening to me, and for making so many beautiful memories with me.
+
+Every moment we spend together becomes a memory that I will always cherish.<br><br>
+
+I feel very lucky to have a friend like you.
+
+Meeting you was one of the best things that happened to me.
+
+No matter where life takes us, I hope our friendship always stays the same.<br><br>
+
+Always keep smiling because your smile makes everyone around you happy.
+
+You will always have a special place in my heart.
+
+<br><br>
+
+<b>I love you, my best friend ❤️</b>
+
+</p>
+
+`;
+
+}
+
+else{
+
+document.getElementById("friendPhoto").src="thanmayi.jpg";
+
+document.getElementById("message").innerHTML=`
+
+<h2>Dear Thanmayi ❤️</h2>
+
+<p>
+
+You are one of the prettiest girls I know, not only because of how you look but also because of your beautiful heart.<br><br>
+
+The value you give to our friendship means a lot to me.
+
+I really like the way you think, the way you behave, and how disciplined you are.
+
+You are always kind, calm, and respectful to everyone around you.<br><br>
+
+Thank you for always being such a wonderful friend.
+
+Talking to you always makes me feel happy.
+
+I feel lucky to have a friend like you in my life.<br><br>
+
+I hope we stay best friends forever and make many more beautiful memories together.
+
+<br><br>
+
+<b>Thank you for being you. ❤️</b>
+
+</p>
+
+`;
+
+}
+
+}
+
+for(let i=0;i<40;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(Math.random()*4+3)+"s";
+
+h.style.fontSize=(Math.random()*20+15)+"px";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
